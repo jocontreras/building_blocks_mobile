@@ -14,6 +14,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
   });
 })
 
+.config(function($ionicConfigProvider) {
+    $ionicConfigProvider.tabs.position('bottom');
+})
+
 .config(function($stateProvider, $urlRouterProvider) {
 
 
@@ -25,13 +29,28 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
     templateUrl: 'templates/tabs.html'
   })
 
-  .state('tab.home', {
-    url: '/home',
-    views: {
-      'tab-home': {
-        templateUrl: 'templates/home/home.html',
-        controller: 'HomeController'
+    .state('tab.home', {
+      url: '/home',
+      views: {
+        'tab-home': {
+          templateUrl: 'templates/home/home.html',
+          controller: 'HomeController'
+        }
       }
+
+    })
+
+    .state('tab.help_request', {
+      url: '/help_request',
+      views: {
+        'tab-help_request': {
+          templateUrl: 'templates/help_request/help_request.html',
+          controller: 'HelpRequestController'
+        }
+      }
+    });
+    $urlRouterProvider.otherwise('/tab/home');
+
     }
   })
 
