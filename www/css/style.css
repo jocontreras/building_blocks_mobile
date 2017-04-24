@@ -1,6 +1,65 @@
 /* Empty. Add your own CSS if you like */
-.ion-content {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #E7E7E7;
+
+.top-nav-bar {
+    color: #FFF ;
+    background-color: #23c1a0 ;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.index {
+    padding-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center
+}
+
+.text {
+    color: #FFF ;
+    font-size: 30px ;
+    left: 0;
+    position:absolute;
+    text-align:center;
+    top: 85px;
+    width: 100%
+}
+
+title-image {
+  margin-top: 0px;
+  height: 25px;
+}
+
+.card
+{
+  margin-bottom: -15px !important;
+  margin-right: 1px !important;
+
+}
+
+.title {
+  color: #303030 ;
+  padding-top: 5px;
+  text-align: center;
+}
+
+.news-title {
+  font-size: 17px ;
+  text-align: center;
+  padding-top: 10px ;
+  margin-bottom: -20px;
+}
+
+.brf-text {
+  text-align: center;
+  padding: 15px;
+}
+
+.fac-icon {
+  padding-left: 50px;
+  margin-bottom: 5px;
+  height: 65px;
 }
