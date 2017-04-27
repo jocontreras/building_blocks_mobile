@@ -72,3 +72,7 @@ title-image {
   margin-bottom: 5px;
   height: 65px;
 }
+
+.my-col-50 {
+  float:left;width:50%;
+}
