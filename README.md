@@ -1,9 +1,6 @@
 # Building_blocks_mobile
 
 Building Blocks Mobile App is the last project for CraftAcademy Cohort (Feb-April 2017). This is the app for housing community that will allow tenants to send help message request, book a facility using their mobile phone, be updated with the latest events/news in their community.
-<br>
-<img src = "https://github.com/jocontreras/building_blocks_mobile/www/img/logoFinal.png" />
-<br>
 
 ## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for deployment and testing purposes.  See deployment for notes on how to deploy the project on a live system.
@@ -46,9 +43,9 @@ $ ionic serve -c --lab
 ## Running the test
 
 ### Create user account
-In order to to use the app, the administrator can login the  Building Blocks Back End using the Registration form:
+In order to use the app, the administrator can login the  Building Blocks Back End using the Registration form:
 <br>
-<img src = "https://github.com/jocontreras/building_blocks_mobile/www/img/registration.png" />
+<img src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/registration.png" />
 <br>
 
 ## Authors
