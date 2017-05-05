@@ -31,7 +31,7 @@ $ ionic start building_blocks_mobile tabs
 ```
 Once that is complete, run the following commands to add support for iOS and Android
 ```
-$ cd bmi_calculator
+$ cd building_blocks_mobile
 $ ionic platform add ios
 $ ionic platform add android
 ```
@@ -45,35 +45,41 @@ $ ionic serve -c --lab
 ### Create user account
 In order to use the app, the tenant must register and login.
 
-Registration form:
+#### Registration form:
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/registration.png" />
 <br>
 
-Login form:
+#### Login form:
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/signin.png" />
 <br>
 
 ### Send Help Request message
 This is the tab where the tenant can write and send the help request message to the administrator of the building.
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/message_request.png" />
 <br>
 
 ### List of Facilities
 This is the tab where tenants can find the facilities available in their building/community
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/facilities.png" />
 <br>
 
 ### Book a facility
 This is where the tenants can check and book facilities
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booking.png" />
 <br>
 
 View of facilities availability
+
 <br>
 <img height="550" width="700" src = "https://github.com/jocontreras/building_blocks_mobile/blob/update_readme/www/img/booked.png" />
 <br>
