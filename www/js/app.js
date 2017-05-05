@@ -1,34 +1,56 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth'])
-  .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker'])
+    //.constant('API_URL', 'http://localhost:3000/api/v1')
+    .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
-  .run(function($ionicPlatform) {
-    $ionicPlatform.ready(function() {
-      if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
-        cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-        cordova.plugins.Keyboard.disableScroll(true);
-      }
-      if (window.StatusBar) {
-        StatusBar.styleDefault();
-      }
-    });
-  })
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
+      cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
+      cordova.plugins.Keyboard.disableScroll(true);
 
-  .config(function($authProvider, API_URL) {
-    $authProvider.configure({
-      apiUrl: API_URL
-    });
-  })
+    }
+    if (window.StatusBar) {
+      StatusBar.styleDefault();
+    }
+  });
+})
 
-  .config(function ($httpProvider) {
-    $httpProvider.defaults.headers.common.Accept = 'application/json';
-  })
+.config(function($authProvider, API_URL) {
+  $authProvider.configure({
+    apiUrl: API_URL
+  });
+})
 
-  .config(function($ionicConfigProvider) {
-    $ionicConfigProvider.tabs.position('bottom');
+.config(function ($httpProvider) {
+  $httpProvider.defaults.headers.common.Accept = 'application/json';
+})
+
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.tabs.position('bottom');
+})
+
+.config(function (ionicDatePickerProvider) {
+    var datePickerObj = {
+      inputDate: new Date(),
+      titleLabel: 'Select a Date',
+      setLabel: 'Book',
+      todayLabel: 'Today',
+      closeLabel: 'Close',
+      mondayFirst: false,
+      weeksList: ["S", "M", "T", "W", "T", "F", "S"],
+      monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+      templateType: 'popup',
+      from: new Date(2012, 8, 1),
+      to: new Date(2019, 8, 1),
+      showTodayButton: true,
+      dateFormat: 'dd MMMM yyyy',
+      closeOnSelect: false,
+      disableWeekdays: []
+    };
+    ionicDatePickerProvider.configDatePicker(datePickerObj);
   })
 
   .config(function($stateProvider, $urlRouterProvider) {
-
 
     $stateProvider
 
@@ -49,6 +71,13 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         }
       })
 
+      .state('book', {
+        url: '/book/{booking:json}',
+        templateUrl: 'templates/book/book.html',
+        controller: 'BookController',
+        params: {booking: null}
+      })
+
       .state('tab.home', {
         url: '/home',
         views: {
@@ -57,7 +86,6 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
             controller: 'HomeController'
           }
         }
-
       })
 
       .state('tab.help_request', {
@@ -75,7 +103,7 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         views: {
           'tab-facilities': {
             templateUrl: 'templates/facilities/facilities.html',
-            controller: 'FacilityController'
+            controller: 'FacilityController',
           }
         }
       })

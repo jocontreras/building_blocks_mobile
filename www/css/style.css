@@ -20,7 +20,7 @@ img {
 }
 
 .index {
-    padding-top: 5px;
+    padding-top: 0px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -37,16 +37,15 @@ img {
     width: 100%
 }
 
-title-image {
+.title-image {
   margin-top: 0px;
   height: 25px;
 }
 
-.card
-{
-  margin-bottom: -15px !important;
-  margin-right: 1px !important;
-
+.card {
+  margin-bottom: -10px !important;
+  margin-right: 10px !important;
+  align-content: inherit;
 }
 
 .title {
@@ -67,8 +66,8 @@ title-image {
   padding: 15px;
 }
 
-.fac-icon {
-  padding-left: 50px;
+.faci {
+  padding-left: 38px;
   margin-bottom: 5px;
   height: 65px;
 }
@@ -76,6 +75,12 @@ title-image {
 .my-col-50 {
   float:left;width:50%;
 }
+
+
+.company-color {
+    background-color: #23c1a0;
+    color: white;
+ }
 
 .contact {
 background:url('../img/contact.background.jpg') no-repeat center center fixed;
@@ -106,3 +111,28 @@ background:url('../img/contact.background.jpg') no-repeat center center fixed;
   background-size: cover;
   height: 600px;
 }
+
+
+.booked {
+  background-color: #999;
+  color: #ffffff;
+  text-align: center;
+}
+
+.availble {
+  background-color: #23c1a0;
+  color: #ffffff;
+}
+
+.desc {
+  color: #999;
+  text-align: center;
+}
+
+.button.button-block, .button.button-full {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border: 0px;
+}
+
+
