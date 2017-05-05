@@ -13,13 +13,10 @@ In order to organize the features needed for our project and track our progress,
 **GitHub**
 [GitHub Pages](https://github.com/CraftAcademy/building_blocks_mobile).
 
-###Ionic
+### Ionic
 The Ionic Framework command line utility makes it easy to start, build, run, and emulate Ionic apps. In addition, it comes with (optional!) integration with the Ionic Cloud, a set of mobile backend services perfect for Ionic apps.
 
-###Cordova
-
-
-###Installing
+### Installing
 Install the latest Cordova and Ionic command-line tools
 ```
 $ npm install -g cordova ionic
@@ -38,11 +35,30 @@ $ cd bmi_calculator
 $ ionic platform add ios
 $ ionic platform add android
 ```
-###Run the application
+### Run the application
 In your terminal run the following command to start a local server and run the application
 ```
 $ ionic serve -c --lab
 ```
-## Deployment
-* [Heroku](https://building-blockz.herokuapp.com/) - to deploy, manage, and scale modern apps
-* [Semaphore](https://semaphoreci.com/craftacademy/building_blocks_back_end) - for  continuous integration
+## Running the test
+
+### Log in
+In order to manage the app, the administrator can login the  Building Blocks Back End using the login form:
+<br>
+<img src = "https://github.com/jocontreras/building_blocks_back_mobile/www/img/logoFinal.png" />
+<br>
+
+## Authors
+**Casper Jureskog** - https://github.com/casperjureskog <br>
+**Fabian Lundgren** - https://github.com/fabianlundgren<br>
+**Felix Fottander** - https://github.com/fottander<br>
+**Jennifer Contreras** - https://github.com/jocontreras<br>
+**Johan Schantz** - https://github.com/Scharrre97<br>
+
+## Acknowledgments
+
+Special thanks to our dear coaches:
+* Amber Wilkie
+* Thomas Ochman
+* Raoul Diffou
+* Sigu Magwa
