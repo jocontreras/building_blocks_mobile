@@ -8,19 +8,20 @@
   </ion-nav-title>
   <ion-content>
     <div class="contact">
-      <h3 class="title">CONTACT</h3>
+      <h3 class="title">ELFÖRBRUKNING</h3>
       <div class="card-contact" style="height: 30%; width: 95%">
         <div class="list-card">
           <div class="item item-divider">
-            <h3 style="text-align: center;">Brf Kungsklippan</h3>
+            <h3 style="text-align: center;">Din veckoförbrukning</h3>
           </div>
           <div class="item item-text-wrap">
-              <p>Here you will find all the contact details for our building.</p>
-              <p>Address: Kungsklippan 12, 112 25 Stockholm</p>
-              <p>Phone: 08-650 27 12</p>
-            </div>
+            <canvas id="base" class="chart-bar"
+                    chart-data="data" chart-labels="labels" chart-colors="colors"
+                    chart-dataset-override="datasetOverride" >
+            </canvas>
           </div>
         </div>
       </div>
+    </div>
   </ion-content>
 </ion-view>

@@ -1,4 +1,4 @@
-angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker'])
+angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'building-blocks.services', 'ngResource', 'ng-token-auth', 'ionic-datepicker', 'chart.js'])
     //.constant('API_URL', 'http://localhost:3000/api/v1')
     .constant('API_URL', 'https://building-blockz.herokuapp.com/api/v1')
 
@@ -32,17 +32,17 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
 .config(function (ionicDatePickerProvider) {
     var datePickerObj = {
       inputDate: new Date(),
-      titleLabel: 'Select a Date',
-      setLabel: 'Book',
-      todayLabel: 'Today',
-      closeLabel: 'Close',
+      titleLabel: 'Välj ett datum',
+      setLabel: 'Boka',
+      todayLabel: 'Dagens datum',
+      closeLabel: 'Stäng',
       mondayFirst: false,
-      weeksList: ["S", "M", "T", "W", "T", "F", "S"],
-      monthsList: ["Jan", "Feb", "March", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec"],
+      weeksList: ["S", "M", "T", "O", "T", "F", "L"],
+      monthsList: ["Jan", "Feb", "Mars", "April", "Maj", "Juni", "Juli", "Aug", "Sept", "Okt", "Nov", "Dec"],
       templateType: 'popup',
       from: new Date(2012, 8, 1),
       to: new Date(2019, 8, 1),
-      showTodayButton: true,
+      showTodayButton: false,
       dateFormat: 'dd MMMM yyyy',
       closeOnSelect: false,
       disableWeekdays: []
@@ -71,11 +71,10 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         }
       })
 
-      .state('book', {
-        url: '/book/{booking:json}',
-        templateUrl: 'templates/book/book.html',
-        controller: 'BookController',
-        params: {booking: null}
+      .state('el', {
+        url: '/el',
+        templateUrl: 'templates/el/el.html',
+        controller: 'ElController',
       })
 
       .state('tab.home', {
@@ -88,34 +87,37 @@ angular.module('building-blocks', ['ionic', 'building-blocks.controllers', 'buil
         }
       })
 
-      .state('tab.help_request', {
+      .state('book', {
+        url: '/book/{booking:json}',
+        templateUrl: 'templates/book/book.html',
+        controller: 'BookController',
+        params: {booking: null}
+      })
+
+
+      .state('help_request', {
         url: '/help_request',
-        views: {
-          'tab-help_request': {
             templateUrl: 'templates/help_request/help_request.html',
             controller: 'HelpRequestController'
-          }
-        }
       })
 
-      .state('tab.facilities', {
+      .state('facilities', {
         url: '/facilities',
-        views: {
-          'tab-facilities': {
             templateUrl: 'templates/facilities/facilities.html',
             controller: 'FacilityController',
-          }
-        }
       })
 
-      .state('tab.contact', {
+
+      .state('news', {
+        url: '/news',
+        templateUrl: 'templates/news/news.html',
+        controller: 'NewsController',
+      })
+
+      .state('contact', {
         url: '/contact',
-        views: {
-          'tab-contact': {
             templateUrl: 'templates/contact/contact.html',
             controller: 'HomeController'
-          }
-        }
       });
 
     $urlRouterProvider.otherwise('/tab/home');

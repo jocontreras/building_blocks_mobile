@@ -1,8 +1,63 @@
 angular.module('building-blocks.controllers', [])
 
-  .controller('HomeController', function ($scope, News) {
+  .controller('HomeController', function ($scope, $state, News) {
     $scope.news = News.query();
+    $scope.go_to_faci = function() {
+      $state.go('facilities');
+    }
+    $scope.go_to_info = function() {
+      $state.go('contact');
+    }
+    $scope.go_to_news = function() {
+      $state.go('news');
+    }
+    $scope.go_to_fel = function() {
+      $state.go('help_request');
+    }
+    $scope.go_to_home = function() {
+      $state.go('tab.home');
+    }
+    $scope.go_to_el = function() {
+      $state.go('el');
+    }
   })
+
+  .controller('NewsController', function ($scope, $state, News) {
+    $scope.news = News.query();
+    $scope.go_to_home = function() {
+      $state.go('tab.home');
+    }
+  })
+
+
+  .controller('ElController', function ($scope, $state) {
+    $scope.go_to_home = function() {
+      $state.go('tab.home');
+    }
+    $scope.colors = ['#45b7cd', '#ff6384', '#ff8e72'];
+
+    $scope.labels = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    $scope.data = [
+      [65, -59, 80, 81, -56, 55, -40],
+      [28, 48, -40, 19, 86, 27, 90]
+    ];
+    $scope.datasetOverride = [
+      {
+        label: "Bar chart",
+        borderWidth: 1,
+        type: 'bar'
+      },
+      {
+        label: "Line chart",
+        borderWidth: 3,
+        hoverBackgroundColor: "rgba(255,99,132,0.4)",
+        hoverBorderColor: "rgba(255,99,132,1)",
+        type: 'line'
+      }
+    ];
+
+  })
+
 
   .controller('BookController', function ($stateParams, $filter, $scope, $state, Facilities, Book, Booking, Block) {
     Book.query($stateParams.booking, function(response) {
@@ -15,6 +70,9 @@ angular.module('building-blocks.controllers', [])
           grabBookedSlots($scope.timeslots, $scope.blocks, $scope.facilities);
         });
       })
+      $scope.go_to_faci = function() {
+        $state.go('facilities');
+      }
     });
     $scope.id = $stateParams.booking.id;
 
@@ -34,7 +92,7 @@ angular.module('building-blocks.controllers', [])
             });
           })
         });
-        $state.go('tab.facilities');
+        $state.go('facilities');
       });
     };
 
@@ -42,10 +100,8 @@ angular.module('building-blocks.controllers', [])
 
       timeslots.forEach(function(timeslot) {
 
-
         console.log(timeslot.start_time);
 
-        debugger;
         if (blocks.includes(timeslot)) {
           timeslot.booked = true;
         } else {
@@ -60,7 +116,6 @@ angular.module('building-blocks.controllers', [])
     function navigateToPage(date) {
       $state.go('book', {booking: {date: date, id: $scope.id}});
     }
-
     var ipObj1 = {
       callback: function (val) {  //Mandatory
         var date = new Date(val);
@@ -75,17 +130,21 @@ angular.module('building-blocks.controllers', [])
       closeOnSelect: false,       //Optional
       templateType: 'popup'       //Optional
     };
-
     $scope.openDatePicker = function (id) {
       $scope.id = id;
       ionicDatePicker.openDatePicker(ipObj1)
     };
+    $scope.go_to_home = function() {
+      $state.go('tab.home');
+    }
   })
 
-  .controller('HelpRequestController', function ($scope, $location, HelpRequest) {
+  .controller('HelpRequestController', function ($scope, $location, $state, HelpRequest) {
+    $scope.go_to_home = function() {
+      $state.go('tab.home');
+    }
     $scope.error = null;
     $scope.help_request = {};
-
     $scope.createHelpRequest = function () {
       HelpRequest.save($scope.help_request, function (response) {
         $scope.error = null;
